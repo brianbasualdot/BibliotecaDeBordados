@@ -1,0 +1,38 @@
+.top-banner {
+    background-color: #FFD1DC;
+    /* Rosa pastel */
+    color: #4A403A;
+    /* Marrón */
+    overflow: hidden;
+    padding: 0.5rem 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1001;
+}
+
+.top-banner-track {
+    display: flex;
+    width: fit-content;
+    animation: scroll 20s linear infinite;
+}
+
+.top-banner-content {
+    white-space: nowrap;
+    padding-right: 2rem;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.top-banner:hover .top-banner-track {
+    animation-play-state: paused;
+}
