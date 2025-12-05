@@ -6,7 +6,8 @@ const Contact = () => {
         <div className="container section">
             <div className="text-center mb-2">
                 <h2>Contacto</h2>
-                <p>Estamos aquí para ayudarte</p>
+                <p>¿Tienes dudas sobre cómo vestir tu mesa? Estamos aquí para ayudarte.</p>
+                <p>Si tienes alguna duda o necesitas más información, no dudes en contactarnos. Estamos aquí para ayudarte.</p>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>

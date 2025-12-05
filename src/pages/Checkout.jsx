@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { CreditCard, Landmark, Truck } from 'lucide-react';
+import ProductRecommendation from '../components/ProductRecommendation';
 
 const Checkout = () => {
     const { cartItems, cartTotal } = useCart();
@@ -42,6 +43,7 @@ const Checkout = () => {
                             <span>${cartTotal.toLocaleString()}</span>
                         </div>
                     </div>
+                    <ProductRecommendation />
                 </div>
 
                 {/* Payment & Shipping */}
@@ -88,7 +90,7 @@ const Checkout = () => {
                                     />
                                     <div>
                                         <span style={{ fontWeight: '600' }}>Transferencia Bancaria</span>
-                                        <p style={{ fontSize: '0.8rem', color: '#666' }}>CBU / Alias (10% de descuento)</p>
+                                        <p style={{ fontSize: '0.8rem', color: '#666' }}>CBU / Alias (5% de descuento)</p>
                                     </div>
                                 </label>
                             </div>
@@ -96,9 +98,9 @@ const Checkout = () => {
                             {paymentMethod === 'transferencia' && (
                                 <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: 'var(--color-bg)', borderRadius: '4px' }}>
                                     <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: '600' }}><Landmark size={16} /> Datos Bancarios:</p>
-                                    <p>Banco: Santander</p>
-                                    <p>CBU: 0720000000000000000000</p>
-                                    <p>Alias: RED.DECO.HOME</p>
+                                    <p>Banco: </p>
+                                    <p>CBU: </p>
+                                    <p>Alias: </p>
                                 </div>
                             )}
                         </div>

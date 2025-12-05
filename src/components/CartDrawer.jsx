@@ -2,6 +2,7 @@ import React from 'react';
 import { X, Trash2, Plus, Minus } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
+import ProductRecommendation from './ProductRecommendation';
 import './CartDrawer.css';
 
 const CartDrawer = () => {
@@ -70,6 +71,7 @@ const CartDrawer = () => {
                         >
                             Iniciar Compra
                         </Link>
+                        <ProductRecommendation />
                     </div>
                 )}
             </div>
