@@ -120,3 +120,73 @@
     width: 100%;
     text-align: center;
 }
+
+.payment-method-selector {
+    margin-bottom: 1.5rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+.payment-method-selector h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--color-text);
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.payment-option:hover {
+    background-color: #f9f9f9;
+}
+
+.payment-option.selected {
+    border-color: var(--color-accent);
+    background-color: rgba(224, 122, 95, 0.05);
+    /* Light accent color */
+}
+
+.payment-option input {
+    accent-color: var(--color-accent);
+}
+
+.cart-summary {
+    margin-bottom: 1.5rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--color-text);
+}
+
+.summary-row.discount {
+    color: #2e7d32;
+    /* Green for discount */
+}
+
+.summary-row.total {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    border-top: 1px dashed #ddd;
+    padding-top: 0.5rem;
+}

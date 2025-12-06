@@ -6,6 +6,39 @@ import ProductRecommendation from '../components/ProductRecommendation';
 const Checkout = () => {
     const { cartItems, cartTotal } = useCart();
     const [paymentMethod, setPaymentMethod] = useState('mercadopago');
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleCheckout = async () => {
+        if (paymentMethod === 'mercadopago') {
+            setIsLoading(true);
+            try {
+                const response = await fetch('http://localhost:3000/api/create_preference', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ items: cartItems }),
+                });
+
+                const data = await response.json();
+
+                if (data.id) {
+                    window.location.href = `https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=${data.id}`;
+                } else {
+                    console.error('Error creating preference:', data);
+                    alert('Hubo un error al procesar el pago. Por favor intenta nuevamente.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Hubo un error de conexión. Asegúrate de que el servidor esté corriendo.');
+            } finally {
+                setIsLoading(false);
+            }
+        } else {
+            // Transfer logic (already shown in UI, maybe redirect to success page or show modal)
+            alert('¡Gracias por tu compra! Por favor realiza la transferencia a los datos indicados.');
+        }
+    };
 
     if (cartItems.length === 0) {
         return (
@@ -49,7 +82,7 @@ const Checkout = () => {
                 {/* Payment & Shipping */}
                 <div>
                     <h3 className="mb-1">Datos de Envío y Pago</h3>
-                    <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                    <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }} onSubmit={(e) => e.preventDefault()}>
 
                         <div style={{ backgroundColor: 'white', padding: '1.5rem', borderRadius: '8px', boxShadow: 'var(--shadow-sm)' }}>
                             <h4 className="mb-1" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Truck size={20} /> Envío</h4>
@@ -98,14 +131,23 @@ const Checkout = () => {
                             {paymentMethod === 'transferencia' && (
                                 <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: 'var(--color-bg)', borderRadius: '4px' }}>
                                     <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: '600' }}><Landmark size={16} /> Datos Bancarios:</p>
-                                    <p>Banco: </p>
-                                    <p>CBU: </p>
-                                    <p>Alias: </p>
+                                    <p>Banco: Santander</p>
+                                    <p>CBU: 0720000788000036492836</p>
+                                    <p>Alias: RED.DECO.HOME</p>
+                                    <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', fontStyle: 'italic' }}>Envía el comprobante por WhatsApp para confirmar tu pedido.</p>
                                 </div>
                             )}
                         </div>
 
-                        <button type="button" className="btn btn-primary" style={{ width: '100%', padding: '1rem' }}>Confirmar Pedido</button>
+                        <button
+                            type="button"
+                            className="btn btn-primary"
+                            style={{ width: '100%', padding: '1rem' }}
+                            onClick={handleCheckout}
+                            disabled={isLoading}
+                        >
+                            {isLoading ? 'Procesando...' : 'Confirmar Pedido'}
+                        </button>
                     </form>
                 </div>
             </div>

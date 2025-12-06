@@ -35,8 +35,8 @@ const Home = () => {
             <section className="featured-section">
                 <div className="container featured-content">
                     <div className="text-center mb-2">
-                        <h2 style={{ color: 'white', fontSize: '2.5rem', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>Destacados</h2>
-                        <p style={{ fontSize: '1.2rem', textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>Nuestros favoritos de la temporada</p>
+                        <h2 style={{ color: 'whitesmoke', fontSize: '2.5rem', textShadow: '0 2px 4px rgba(15, 15, 15, 0.72)' }}>Destacados</h2>
+                        <p style={{ fontSize: '1.2rem', textShadow: '0 1px 2px rgba(112, 112, 112, 0.98)' }}>Nuestros favoritos de la temporada</p>
                     </div>
                     <div className="featured-grid">
                         {featuredProducts.map(product => (

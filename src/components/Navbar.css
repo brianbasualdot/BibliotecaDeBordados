@@ -9,8 +9,15 @@
 
 .navbar-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    gap: 1rem;
+}
+
+.navbar-logo-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .logo {
@@ -20,15 +27,25 @@
     color: var(--color-accent);
 }
 
+.navbar-bottom-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
 .nav-links {
     display: flex;
     gap: 2rem;
+    margin: 0 auto; /* Center the links if desired, or remove to keep left */
 }
 
 .nav-link {
     font-weight: 500;
     color: var(--color-text);
     position: relative;
+    text-decoration: none;
 }
 
 .nav-link:hover,
@@ -56,13 +73,74 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    /* Position absolute to keep it on the right without affecting center alignment of links if needed, 
+       but flex space-between on parent handles it well usually. 
+       For now, let's keep it simple flex. */
 }
+
+/* Search Styles */
+.search-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text);
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn:hover {
+    color: var(--color-accent);
+}
+
+.search-form-nav {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 0.2rem 0.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.search-form-nav input {
+    border: none;
+    outline: none;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.9rem;
+    width: 150px;
+    color: var(--color-text);
+}
+
+.search-submit-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.search-submit-btn:hover {
+    color: var(--color-accent);
+}
+
 
 .cart-btn {
     background: none;
     color: var(--color-text);
     position: relative;
     padding: 0.25rem;
+    border: none;
+    cursor: pointer;
 }
 
 .cart-badge {
@@ -84,6 +162,8 @@
     display: none;
     background: none;
     color: var(--color-text);
+    border: none;
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -91,9 +171,13 @@
         display: block;
     }
 
+    .navbar-bottom-section {
+        justify-content: flex-end; /* Align actions to right on mobile */
+    }
+
     .nav-links {
         position: fixed;
-        top: 70px;
+        top: 140px; /* Adjusted for taller navbar */
         left: 0;
         right: 0;
         background-color: var(--color-surface);
@@ -102,6 +186,10 @@
         box-shadow: var(--shadow-md);
         transform: translateY(-150%);
         transition: transform 0.3s ease;
+        z-index: 999;
+        margin: 0;
+        width: 100%;
+        align-items: center;
     }
 
     .nav-links.open {

@@ -15,6 +15,12 @@ const CartDrawer = () => {
         cartTotal
     } = useCart();
 
+    const [paymentMethod, setPaymentMethod] = React.useState('card');
+
+    const discount = 0.05;
+    const discountAmount = paymentMethod === 'transfer' ? cartTotal * discount : 0;
+    const finalTotal = cartTotal - discountAmount;
+
     if (!isCartOpen) return null;
 
     return (
@@ -60,10 +66,49 @@ const CartDrawer = () => {
 
                 {cartItems.length > 0 && (
                     <div className="cart-footer">
-                        <div className="cart-total">
-                            <span>Total:</span>
-                            <span>${cartTotal.toLocaleString()}</span>
+                        <div className="payment-method-selector">
+                            <h4>Método de Pago</h4>
+                            <div className="payment-options">
+                                <label className={`payment-option ${paymentMethod === 'card' ? 'selected' : ''}`}>
+                                    <input
+                                        type="radio"
+                                        name="paymentMethod"
+                                        value="card"
+                                        checked={paymentMethod === 'card'}
+                                        onChange={(e) => setPaymentMethod(e.target.value)}
+                                    />
+                                    <span>Tarjeta / Otros</span>
+                                </label>
+                                <label className={`payment-option ${paymentMethod === 'transfer' ? 'selected' : ''}`}>
+                                    <input
+                                        type="radio"
+                                        name="paymentMethod"
+                                        value="transfer"
+                                        checked={paymentMethod === 'transfer'}
+                                        onChange={(e) => setPaymentMethod(e.target.value)}
+                                    />
+                                    <span>Transferencia (5% OFF)</span>
+                                </label>
+                            </div>
                         </div>
+
+                        <div className="cart-summary">
+                            <div className="summary-row">
+                                <span>Subtotal:</span>
+                                <span>${cartTotal.toLocaleString()}</span>
+                            </div>
+                            {paymentMethod === 'transfer' && (
+                                <div className="summary-row discount">
+                                    <span>Descuento (5%):</span>
+                                    <span>-${discountAmount.toLocaleString()}</span>
+                                </div>
+                            )}
+                            <div className="summary-row total">
+                                <span>Total:</span>
+                                <span>${finalTotal.toLocaleString()}</span>
+                            </div>
+                        </div>
+
                         <Link
                             to="/checkout"
                             className="btn btn-primary checkout-btn"
