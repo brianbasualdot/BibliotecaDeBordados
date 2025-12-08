@@ -21,9 +21,9 @@
 }
 
 .logo {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-family: var(--font-logo);
+    font-size: 2rem;
+    font-weight: 400;
     color: var(--color-accent);
 }
 
@@ -38,7 +38,8 @@
 .nav-links {
     display: flex;
     gap: 2rem;
-    margin: 0 auto; /* Center the links if desired, or remove to keep left */
+    margin: 0 auto;
+    /* Center the links if desired, or remove to keep left */
 }
 
 .nav-link {
@@ -106,7 +107,7 @@
     border: 1px solid #ddd;
     border-radius: 20px;
     padding: 0.2rem 0.5rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .search-form-nav input {
@@ -172,12 +173,14 @@
     }
 
     .navbar-bottom-section {
-        justify-content: flex-end; /* Align actions to right on mobile */
+        justify-content: flex-end;
+        /* Align actions to right on mobile */
     }
 
     .nav-links {
         position: fixed;
-        top: 140px; /* Adjusted for taller navbar */
+        top: 140px;
+        /* Adjusted for taller navbar */
         left: 0;
         right: 0;
         background-color: var(--color-surface);

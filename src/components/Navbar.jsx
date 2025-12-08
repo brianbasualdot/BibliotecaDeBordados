@@ -40,9 +40,9 @@ const Navbar = () => {
                 <div className="navbar-bottom-section">
                     <div className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
                         <Link to="/" className={`nav-link ${isActive('/')}`} onClick={closeMobileMenu}>Inicio</Link>
-                        <Link to="/catalogo" className={`nav-link ${isActive('/catalogo')}`} onClick={closeMobileMenu}>Catálogo</Link>
-                        <Link to="/personalizados" className={`nav-link ${isActive('/personalizados')}`} onClick={closeMobileMenu}>Personalizados</Link>
+                        <Link to="/catalogo" className={`nav-link ${isActive('/catalogo')}`} onClick={closeMobileMenu}>Productos</Link>
                         <Link to="/nosotros" className={`nav-link ${isActive('/nosotros')}`} onClick={closeMobileMenu}>Sobre Nosotros</Link>
+                        <Link to="/personalizados" className={`nav-link ${isActive('/personalizados')}`} onClick={closeMobileMenu}>Personalizados</Link>
                         <Link to="/contacto" className={`nav-link ${isActive('/contacto')}`} onClick={closeMobileMenu}>Contacto</Link>
                     </div>
 

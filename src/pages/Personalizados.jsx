@@ -53,7 +53,9 @@ const Personalizados = () => {
 
     return (
         <div className="container section">
-            <h2 className="mb-2" style={{ color: 'var(--color-accent)', textAlign: 'center' }}>Diseños Personalizados</h2>
+            <h1 className="mb-2" style={{ color: 'var(--color-accent)', textAlign: 'center' }}>Diseños Personalizados</h1>
+            <hr />
+            <br />
             <p style={{ textAlign: 'center', marginBottom: '2rem', maxWidth: '800px', margin: '0 auto 2rem' }}>
                 ¿Tenés una idea en mente? Subí tus imágenes de referencia o diseños y nosotros lo hacemos realidad.
                 Ideal para regalos empresariales, eventos especiales o simplemente para darle un toque único a tu hogar.

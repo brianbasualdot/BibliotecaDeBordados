@@ -8,6 +8,10 @@ const Checkout = () => {
     const [paymentMethod, setPaymentMethod] = useState('mercadopago');
     const [isLoading, setIsLoading] = useState(false);
 
+    const discount = 0.05;
+    const discountAmount = paymentMethod === 'transferencia' ? cartTotal * discount : 0;
+    const finalTotal = cartTotal - discountAmount;
+
     const handleCheckout = async () => {
         if (paymentMethod === 'mercadopago') {
             setIsLoading(true);
@@ -71,9 +75,24 @@ const Checkout = () => {
                                 <p>${(item.price * item.quantity).toLocaleString()}</p>
                             </div>
                         ))}
-                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '1.2rem', fontWeight: '700', marginTop: '1rem' }}>
-                            <span>Total</span>
-                            <span>${cartTotal.toLocaleString()}</span>
+
+                        <div style={{ marginTop: '1rem', borderTop: '2px solid #eee', paddingTop: '1rem' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', color: '#666' }}>
+                                <span>Subtotal</span>
+                                <span>${cartTotal.toLocaleString()}</span>
+                            </div>
+
+                            {paymentMethod === 'transferencia' && (
+                                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', color: 'var(--color-primary)', fontWeight: '500' }}>
+                                    <span>Descuento Transferencia (5%)</span>
+                                    <span>-${discountAmount.toLocaleString()}</span>
+                                </div>
+                            )}
+
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '1.3rem', fontWeight: '700', marginTop: '0.5rem', color: 'var(--color-text)' }}>
+                                <span>Total</span>
+                                <span>${finalTotal.toLocaleString()}</span>
+                            </div>
                         </div>
                     </div>
                     <ProductRecommendation />

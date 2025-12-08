@@ -20,7 +20,9 @@ const Catalog = () => {
     return (
         <div className="container section">
             <div className="text-center mb-2">
-                <h2>Nuestros Productos</h2>
+                <h1>Nuestros Productos</h1>
+                <hr />
+                <br />
                 <p>En nuestra tienda online encontrarás una selección exclusiva de <b>individuales de mesa </b>diseñados para transformar cada comida en una ocasión especial.
                     <br></br>
                     Ya sea que busques manteles individuales para el uso diario o piezas únicas para celebraciones, nuestra colección combina funcionalidad con las últimas tendencias en decoración de interiores.</p>
@@ -41,7 +43,10 @@ const Catalog = () => {
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '2rem' }}>
                 {filteredProducts.map(product => (
-                    <ProductCard key={product.id} product={product} />
+                    <ProductCard
+                        key={product.id}
+                        product={product}
+                    />
                 ))}
             </div>
         </div>

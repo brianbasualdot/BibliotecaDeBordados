@@ -1,15 +1,26 @@
 :root {
-  /* Color Palette */
-  --color-bg: #F9F7F2;
-  --color-text: #4A403A;
-  --color-accent: #C68E76;
-  --color-accent-hover: #B07D68;
-  --color-secondary: #8FA396;
-  --color-surface: #FFFFFF;
-  --color-border: #E5E0D8;
+  /* Christmas Palette */
+  --color-bg: #E7E0D6;
+  /* Beige/Cream */
+  --color-text: #014421;
+  /* Dark Green - festive text */
+  --color-accent: #800020;
+  /* Burgundy - Primary Buttons/Highlights */
+  --color-accent-hover: #E35336;
+  /* Red-Orange/Terra Cotta */
+  --color-secondary: #B9974C;
+  /* Gold - Details/Secondary */
+  --color-surface: #FDFBF7;
+  /* Lighter Cream for cards/surfaces */
+  --color-border: #D0C0A0;
+
+  /* Deprecated/Mapped for compatibility if needed */
+  --color-primary: #014421;
+  /* Alias for Green */
 
   /* Typography */
-  --font-heading: 'Playfair Display', serif;
+  --font-logo: 'Germania One', cursive;
+  --font-heading: 'Cormorant SC', serif;
   --font-body: 'Lato', sans-serif;
 
   /* Spacing */

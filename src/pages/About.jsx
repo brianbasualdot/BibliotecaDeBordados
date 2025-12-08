@@ -4,8 +4,12 @@ const About = () => {
     return (
         <div className="container section">
             <div className="text-center mb-2">
-                <h2>Sobre Nosotros</h2>
-                <p>Pasión por los detalles</p>
+                <hr />
+                <br />
+                <h1>Sobre Nosotros</h1>
+                <h3>Pasión por los detalles</h3>
+                <hr />
+                <br />
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>

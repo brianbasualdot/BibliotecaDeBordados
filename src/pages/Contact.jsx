@@ -5,7 +5,9 @@ const Contact = () => {
     return (
         <div className="container section">
             <div className="text-center mb-2">
-                <h2>Contacto</h2>
+                <h1>Contacto</h1>
+                <hr />
+                <br />
                 <p>¿Tienes dudas sobre cómo vestir tu mesa? Estamos aquí para ayudarte.</p>
                 <p>Si tienes alguna duda o necesitas más información, no dudes en contactarnos. Estamos aquí para ayudarte.</p>
             </div>

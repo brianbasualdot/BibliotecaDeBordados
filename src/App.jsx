@@ -8,6 +8,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Personalizados from './pages/Personalizados';
 import Checkout from './pages/Checkout';
+import ProductDetail from './pages/ProductDetail';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="catalogo" element={<Catalog />} />
+          <Route path="producto/:id" element={<ProductDetail />} />
           <Route path="nosotros" element={<About />} />
           <Route path="contacto" element={<Contact />} />
           <Route path="personalizados" element={<Personalizados />} />
