@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ShoppingBag, ChevronLeft, ChevronRight, ArrowLeft } from 'lucide-react';
 import { products } from '../data/products';
 import { useCart } from '../context/CartContext';
+import ImageGallery from '../components/ImageGallery';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
@@ -12,7 +13,7 @@ const ProductDetail = () => {
 
     const [product, setProduct] = useState(null);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [zoomPosition, setZoomPosition] = useState({ x: 50, y: 50 });
+    const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
     useEffect(() => {
         // Find product by ID
@@ -40,20 +41,18 @@ const ProductDetail = () => {
         return <div style={{ padding: '4rem', textAlign: 'center' }}>Cargando producto...</div>;
     }
 
-    const nextImage = () => {
+    const nextImage = (e) => {
+        e.stopPropagation();
         setCurrentImageIndex((prev) => (prev === allImages.length - 1 ? 0 : prev + 1));
     };
 
-    const prevImage = () => {
+    const prevImage = (e) => {
+        e.stopPropagation();
         setCurrentImageIndex((prev) => (prev === 0 ? allImages.length - 1 : prev - 1));
     };
 
-    const handleMouseMove = (e) => {
-        // Calculate position relative to the image container
-        const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
-        const x = ((e.clientX - left) / width) * 100;
-        const y = ((e.clientY - top) / height) * 100;
-        setZoomPosition({ x, y });
+    const openGallery = () => {
+        setIsGalleryOpen(true);
     };
 
     return (
@@ -69,7 +68,7 @@ const ProductDetail = () => {
             <div className="product-detail-layout">
                 {/* Image Section */}
                 <div className="product-detail-image-section">
-                    <div className="product-main-image-container" onMouseMove={handleMouseMove} onMouseLeave={() => setZoomPosition({ x: 50, y: 50 })}>
+                    <div className="product-main-image-container" onClick={openGallery}>
                         {allImages.length > 1 && (
                             <button className="nav-slider-btn prev" onClick={prevImage}>
                                 <ChevronLeft size={30} />
@@ -80,9 +79,6 @@ const ProductDetail = () => {
                             src={allImages[currentImageIndex]}
                             alt={product.name}
                             className="product-detail-image"
-                            style={{
-                                transformOrigin: `${zoomPosition.x}% ${zoomPosition.y}%`
-                            }}
                         />
 
                         {allImages.length > 1 && (
@@ -90,6 +86,8 @@ const ProductDetail = () => {
                                 <ChevronRight size={30} />
                             </button>
                         )}
+
+                        <div className="hover-zoom-hint">Click para ampliar</div>
                     </div>
 
                     {/* Thumbnail/Dot Navigation */}
@@ -160,6 +158,14 @@ const ProductDetail = () => {
                     </div>
                 </div>
             </div>
+
+            {isGalleryOpen && (
+                <ImageGallery
+                    images={allImages}
+                    initialIndex={currentImageIndex}
+                    onClose={() => setIsGalleryOpen(false)}
+                />
+            )}
         </div>
     );
 };

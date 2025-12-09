@@ -1,22 +1,23 @@
 :root {
   /* Christmas Palette */
-  --color-bg: #E7E0D6;
-  /* Beige/Cream */
-  --color-text: #014421;
-  /* Dark Green - festive text */
-  --color-accent: #800020;
-  /* Burgundy - Primary Buttons/Highlights */
-  --color-accent-hover: #E35336;
-  /* Red-Orange/Terra Cotta */
-  --color-secondary: #B9974C;
-  /* Gold - Details/Secondary */
-  --color-surface: #FDFBF7;
-  /* Lighter Cream for cards/surfaces */
-  --color-border: #D0C0A0;
+  /* New Palette */
+  --color-bg: #f4efd5;
+  /* Cream/Pale Yellow */
+  --color-text: #9a8576;
+  /* Taupe/Brown */
+  --color-accent: #e49788;
+  /* Peach/Salmon */
+  --color-accent-hover: #c39b85;
+  /* Tan/Beige */
+  --color-secondary: #fed0ba;
+  /* Light Peach */
+  --color-surface: #ffffff;
+  /* White for cards */
+  --color-border: #d7b19d;
+  /* Tan/Beige */
 
-  /* Deprecated/Mapped for compatibility if needed */
-  --color-primary: #014421;
-  /* Alias for Green */
+  --color-primary: #d7b19d;
+  /* Tan/Beige - Mapped for compatibility */
 
   /* Typography */
   --font-logo: 'Germania One', cursive;
@@ -97,7 +98,8 @@ img {
 
 .btn-primary {
   background-color: var(--color-accent);
-  color: white;
+  color: var(--color-text);
+  /* Dark text for contrast on light peach */
 }
 
 .btn-primary:hover {
@@ -113,7 +115,8 @@ img {
 
 .btn-outline:hover {
   background-color: var(--color-text);
-  color: white;
+  color: var(--color-bg);
+  /* Light text on dark hover background */
 }
 
 .section {

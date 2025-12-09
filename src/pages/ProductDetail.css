@@ -33,8 +33,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: zoom-in;
-    /* Indicate zoom availability */
+    cursor: pointer;
+    /* Indicate clickable */
 }
 
 .product-detail-image {
@@ -42,14 +42,31 @@
     height: 100%;
     object-fit: contain;
     /* Ensure image fits within 1:1 container */
-    transition: transform 0.2s ease-out;
-    /* Faster transform for responsiveness, but kept for smooth entry/exit */
-    will-change: transform-origin;
+    transition: transform 0.3s ease;
 }
 
 .product-main-image-container:hover .product-detail-image {
-    transform: scale(1.5);
-    /* Zoom in 1.5x */
+    transform: scale(1.1);
+    /* Scale to 1.1 on hover as requested */
+}
+
+.hover-zoom-hint {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.product-main-image-container:hover .hover-zoom-hint {
+    opacity: 1;
 }
 
 .product-detail-info-section {

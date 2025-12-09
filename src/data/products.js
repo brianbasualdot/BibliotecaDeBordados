@@ -37,12 +37,12 @@ export const products = [
         id: 3,
         name: "Set Individuales de Tela Tusor Premium X 2",
         price: 35000,
-        category: "Navideños",
-        image: "https://images.unsplash.com/photo-1735599480859-5e72d2e93a12?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        category: "Individuales",
+        image: "/img/products/3/individual-tusor-premium.jpg",
         images: [
-            "https://images.unsplash.com/photo-1735599480859-5e72d2e93a12?q=80&w=764&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1545672432-284607f52207?q=80&w=1170&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1576072314125-97a67f897640?q=80&w=1285&auto=format&fit=crop"
+            "/img/products/3/detalle-moños.jpg",
+            "/img/products/3/mesa-decoracion.jpg",
+            "/img/products/3/mesa-navideña.jpg"
         ],
         description: "Set de dos individuales ideales para cenas en pareja o decoraciones simétricas.",
         material: "Tusor Premium",
@@ -54,12 +54,12 @@ export const products = [
         id: 4,
         name: "Individual de Tela Tusor Premium X 4",
         price: 55000,
-        category: "Moños",
-        image: "https://plus.unsplash.com/premium_photo-1667509543972-ba3f461ef357?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        category: "Individuales",
+        image: "/img/products/4/individual-tusor-premium.jpg",
         images: [
-            "https://plus.unsplash.com/premium_photo-1667509543972-ba3f461ef357?q=80&w=735&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1604921935759-42b78ce13e61?q=80&w=800&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=800&auto=format&fit=crop"
+            "/img/products/4/detalle-pinos.jpg",
+            "/img/products/4/mesa-decoracion.jpg",
+            "/img/products/4/mesa-navideña.jpg"
         ],
         description: "Pack de 4 individuales, la solución práctica para familias.",
         material: "Tusor de alto gramaje",
@@ -71,7 +71,7 @@ export const products = [
         id: 5,
         name: "Individual de Tela Tusor Premium X 6",
         price: 65000,
-        category: "Moños",
+        category: "Individuales",
         image: "https://images.unsplash.com/photo-1513161455079-7dc1de15ef3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         images: [
             "https://images.unsplash.com/photo-1513161455079-7dc1de15ef3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -88,7 +88,7 @@ export const products = [
         id: 6,
         name: "Individual de Tela Tusor Premium X 8",
         price: 74500,
-        category: "Listones",
+        category: "Individuales",
         image: "https://images.unsplash.com/photo-1543589077-47d81606c1bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
         images: [
             "https://images.unsplash.com/photo-1543589077-47d81606c1bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -105,7 +105,7 @@ export const products = [
         id: 7,
         name: "Individual de Tela Tusor Premium X 12",
         price: 90500,
-        category: "Navideños",
+        category: "Individuales",
         image: "https://plus.unsplash.com/premium_photo-1723575728793-cda094094bfc?q=80&w=1285&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         images: [
             "https://plus.unsplash.com/premium_photo-1723575728793-cda094094bfc?q=80&w=1285&auto=format&fit=crop",
@@ -122,7 +122,7 @@ export const products = [
         id: 8,
         name: "Set Individuales de Tela Tusor Premium X 2 navideños",
         price: 35500,
-        category: "Navideños",
+        category: "Individuales",
         image: "https://plus.unsplash.com/premium_photo-1696879452422-3aa2095daa23?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         images: [
             "https://plus.unsplash.com/premium_photo-1696879452422-3aa2095daa23?q=80&w=688&auto=format&fit=crop",

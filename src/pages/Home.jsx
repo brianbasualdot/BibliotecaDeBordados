@@ -34,6 +34,23 @@ const Home = () => {
                 </div>
             </section>
 
+            <section className="featured-section">
+                <div className="container featured-content">
+                    <div className="text-center mb-2">
+                        <h2 style={{ color: 'var(--color-primary)', fontSize: '2.5rem', textShadow: 'none' }}>Destacados</h2>
+                        <p style={{ fontSize: '1.2rem', color: 'var(--color-text)' }}>Nuestros favoritos de la temporada</p>
+                    </div>
+                    <div className="featured-grid">
+                        {featuredProducts.map(product => (
+                            <ProductCard
+                                key={product.id}
+                                product={product}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             <section className="section container">
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
                     <h2 className="mb-2" style={{ color: 'var(--color-accent)', fontSize: '2.5rem' }}>Espíritu Navideño en Cada Puntada</h2>
@@ -52,22 +69,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="featured-section">
-                <div className="container featured-content">
-                    <div className="text-center mb-2">
-                        <h2 style={{ color: 'var(--color-primary)', fontSize: '2.5rem', textShadow: 'none' }}>Destacados</h2>
-                        <p style={{ fontSize: '1.2rem', color: 'var(--color-text)' }}>Nuestros favoritos de la temporada</p>
-                    </div>
-                    <div className="featured-grid">
-                        {featuredProducts.map(product => (
-                            <ProductCard
-                                key={product.id}
-                                product={product}
-                            />
-                        ))}
-                    </div>
-                </div>
-            </section>
+
         </div>
     );
 };
