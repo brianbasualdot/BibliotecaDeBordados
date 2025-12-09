@@ -1,23 +1,25 @@
 :root {
   /* Christmas Palette */
-  /* New Palette */
-  --color-bg: #f4efd5;
-  /* Cream/Pale Yellow */
-  --color-text: #9a8576;
-  /* Taupe/Brown */
-  --color-accent: #e49788;
-  /* Peach/Salmon */
-  --color-accent-hover: #c39b85;
-  /* Tan/Beige */
-  --color-secondary: #fed0ba;
-  /* Light Peach */
-  --color-surface: #ffffff;
-  /* White for cards */
-  --color-border: #d7b19d;
-  /* Tan/Beige */
+  /* New Palette: White, Black, Pink */
+  --color-bg: #ece6e6;
+  /* White */
+  --color-text: #000000;
+  /* Black */
+  --color-accent: #ea9fc5;
+  /* Pink */
+  --color-accent-hover: #ea9dbe;
+  /* Darker Pink */
+  --color-secondary: #fbcfe8;
+  /* Light Pink */
+  --color-surface: #ece6e6;
+  /* White */
+  --color-border: #1f1f1f;
+  /* Black */
 
-  --color-primary: #d7b19d;
-  /* Tan/Beige - Mapped for compatibility */
+  --color-primary: var(--color-accent);
+  /* Pink - Mapped for compatibility */
+  --color-primary-dark: var(--color-accent-hover);
+  /* Darker Pink */
 
   /* Typography */
   --font-logo: 'Germania One', cursive;
@@ -44,7 +46,7 @@
 
 body {
   font-family: var(--font-body);
-  background-color: #eceae4;
+  background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
 }

@@ -32,7 +32,7 @@ const Navbar = () => {
                 {/* Logo Section - Top */}
                 <div className="navbar-logo-section">
                     <Link to="/" className="logo" onClick={closeMobileMenu}>
-                        <img src="/logo.png" alt="Biblioteca de bordados" style={{ height: '80px' }} />
+                        <img src="/LogoBDB.svg" alt="Biblioteca de bordados" style={{ height: '32px' }} />
                     </Link>
                 </div>
 

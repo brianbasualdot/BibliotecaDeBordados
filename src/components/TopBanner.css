@@ -1,8 +1,8 @@
 .top-banner {
-    background-color: #FFD1DC;
-    /* Rosa pastel */
-    color: #4A403A;
-    /* Marrón */
+    background-color: var(--color-secondary);
+    /* Light Pink */
+    color: var(--color-text);
+    /* Black */
     overflow: hidden;
     padding: 0.5rem 0;
     font-size: 0.85rem;

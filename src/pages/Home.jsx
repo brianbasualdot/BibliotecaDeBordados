@@ -12,6 +12,8 @@ const Home = () => {
     return (
         <div>
             <Hero />
+            <br />
+            <br />
             <section className="section" style={{ backgroundColor: 'var(--color-bg)', color: 'green', textAlign: 'center', padding: '2rem 0' }}>
                 <div className="container">
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap' }}>
@@ -33,7 +35,8 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-
+            <br />
+            <hr />
             <section className="featured-section">
                 <div className="container featured-content">
                     <div className="text-center mb-2">
@@ -50,7 +53,8 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-
+            <br />
+            <hr />
             <section className="section container">
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
                     <h2 className="mb-2" style={{ color: 'var(--color-accent)', fontSize: '2.5rem' }}>Espíritu Navideño en Cada Puntada</h2>

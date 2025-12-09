@@ -10,7 +10,10 @@ const About = () => {
                 <h3>Pasión por los detalles</h3>
                 <hr />
                 <br />
+                <br />
             </div>
+
+
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
                 <div>
